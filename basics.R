@@ -59,7 +59,7 @@ flightsRearranged <- tryFlights %>%
 flightsWrangled <- tryFlights %>%
   rename(tail_num = tailnum) %>%
   select(carrier, ends_with("time"), everything()) %>%
-  filter(carrier == "DL", dep_time <= 500) %>%
+  filter(carrier == "B6", dep_time <= 500) %>%
   mutate(gain = arr_delay - dep_delay, speed = distance/air_time *60) %>%
   arrange(!is.na(speed), desc(speed))
   
@@ -67,10 +67,13 @@ flightsWrangled <- tryFlights %>%
 flightsTransmuted <- flightsWrangled %>%
   transmute(speed_doubled = speed *2)
 
+# Grouped summaries
+byDay <- group_by(tryFlights, year, month, day)
+summarize(byDay, delay = mean(dep_delay, na.rm = TRUE))
+
 
 
 install.packages("opendatatoronto")
 library(opendatatoronto)
-
 
 
