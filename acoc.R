@@ -53,7 +53,6 @@ for (x in 2:323){
 # Right 1, Down 1
 index <- 2
 tree1 <- 0
-x <- 0
 for (x in 2:323){
   if(str_sub(day3$X1[x],index,index) == "#"){
     tree1 <- tree1 + 1
@@ -64,7 +63,6 @@ for (x in 2:323){
 #Right 5, Down 1
 index <- 6
 tree5 <- 0
-x <- 0
 for (x in 2:323){
   if(str_sub(day3$X1[x],index,index) == "#"){
     tree5 <- tree5 + 1
@@ -75,7 +73,6 @@ for (x in 2:323){
 #Right 7, Down 1
 index <- 8
 tree7 <- 0
-x <- 0
 for (x in 2:323){
   if(str_sub(day3$X1[x],index,index) == "#"){
     tree7 <- tree7 + 1
@@ -86,7 +83,6 @@ for (x in 2:323){
 #Right 1, Down 2
 index <- 2
 tree2 <- 0
-x <- 0
 for (x in seq(3,323,by=2)){
   if(str_sub(day3$X1[x],index,index) == "#"){
     tree2 <- tree2 + 1
